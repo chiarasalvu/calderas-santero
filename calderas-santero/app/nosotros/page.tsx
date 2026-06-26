@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Section from "@/components/Section";
+
+export const metadata: Metadata = {
+  title: "Nosotros | Calderas Santero",
+  description:
+    "Conocé la historia, misión y valores del equipo de Calderas Santero.",
+};
 
 const valores = [
   {

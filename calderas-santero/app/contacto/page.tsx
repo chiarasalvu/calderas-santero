@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import Section from "@/components/Section";
 import ContactForm from "@/components/ContactForm";
+
+export const metadata: Metadata = {
+  title: "Contacto | Calderas Santero",
+  description: "Escribinos para coordinar una instalación, reparación o mantenimiento.",
+};
 
 export default function Contacto() {
   return (

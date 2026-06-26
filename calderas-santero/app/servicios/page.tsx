@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Section from "@/components/Section";
 import Card from "@/components/Card";
 import { servicios } from "@/data/servicios";
+
+export const metadata: Metadata = {
+  title: "Servicios | Calderas Santero",
+  description:
+    "Instalación, mantenimiento, reparación y asesoría en calefacción para hogares y empresas.",
+};
 
 export default function Servicios() {
   return (

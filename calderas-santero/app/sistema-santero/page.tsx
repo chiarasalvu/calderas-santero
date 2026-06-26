@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Section from "@/components/Section";
 import {
   pasosSistemaSantero,
   diferencialesSistemaSantero,
 } from "@/data/sistema-santero";
+
+export const metadata: Metadata = {
+  title: "Sistema Santero | Calderas Santero",
+  description:
+    "Conocé el método propio de diagnóstico, propuesta, instalación y mantenimiento de Calderas Santero.",
+};
 
 export default function SistemaSantero() {
   return (
