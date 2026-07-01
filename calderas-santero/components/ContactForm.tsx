@@ -12,16 +12,21 @@ export default function ContactForm() {
 
   if (enviado) {
     return (
-      <div className="rounded-xl border border-green-200 bg-green-50 p-6 text-center text-green-800">
-        ¡Gracias por tu mensaje! Nos pondremos en contacto a la brevedad.
+      <div className="rounded-2xl bg-cream-card p-8 text-center">
+        <p className="font-heading text-lg font-semibold text-navy">
+          ¡Gracias por tu mensaje!
+        </p>
+        <p className="mt-2 text-sm text-zinc-600">
+          Nos pondremos en contacto a la brevedad.
+        </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <div className="flex flex-col gap-1">
-        <label htmlFor="nombre" className="text-sm font-medium text-zinc-700">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="nombre" className="text-sm font-medium text-navy">
           Nombre
         </label>
         <input
@@ -29,12 +34,12 @@ export default function ContactForm() {
           name="nombre"
           type="text"
           required
-          className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
+          className="rounded-lg border border-zinc-300 px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-brand-red focus:ring-2 focus:ring-brand-red/20"
         />
       </div>
 
-      <div className="flex flex-col gap-1">
-        <label htmlFor="email" className="text-sm font-medium text-zinc-700">
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="email" className="text-sm font-medium text-navy">
           Email
         </label>
         <input
@@ -42,24 +47,24 @@ export default function ContactForm() {
           name="email"
           type="email"
           required
-          className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
+          className="rounded-lg border border-zinc-300 px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-brand-red focus:ring-2 focus:ring-brand-red/20"
         />
       </div>
 
-      <div className="flex flex-col gap-1">
-        <label htmlFor="telefono" className="text-sm font-medium text-zinc-700">
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="telefono" className="text-sm font-medium text-navy">
           Teléfono
         </label>
         <input
           id="telefono"
           name="telefono"
           type="tel"
-          className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
+          className="rounded-lg border border-zinc-300 px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-brand-red focus:ring-2 focus:ring-brand-red/20"
         />
       </div>
 
-      <div className="flex flex-col gap-1">
-        <label htmlFor="mensaje" className="text-sm font-medium text-zinc-700">
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="mensaje" className="text-sm font-medium text-navy">
           Mensaje
         </label>
         <textarea
@@ -67,13 +72,13 @@ export default function ContactForm() {
           name="mensaje"
           required
           rows={4}
-          className="rounded-md border border-zinc-300 px-3 py-2 text-sm"
+          className="rounded-lg border border-zinc-300 px-4 py-2.5 text-sm text-zinc-900 outline-none focus:border-brand-red focus:ring-2 focus:ring-brand-red/20"
         />
       </div>
 
       <button
         type="submit"
-        className="rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700"
+        className="mt-2 rounded-lg bg-brand-red px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-navy"
       >
         Enviar mensaje
       </button>
