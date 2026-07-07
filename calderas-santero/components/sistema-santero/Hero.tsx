@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="bg-navy px-6 py-20 sm:py-28">
@@ -26,7 +28,14 @@ export default function Hero() {
 
         <div className="relative">
           <div className="aspect-square rounded-2xl bg-white p-4 shadow-xl">
-            <div className="h-full w-full rounded-xl bg-gradient-to-br from-zinc-200 via-zinc-100 to-zinc-300" />
+            <div className="relative h-full w-full overflow-hidden rounded-xl bg-zinc-100">
+              <Image
+                src="/img/generales/caldera-4.png"
+                alt="Sistema Santero instalado"
+                fill
+                className="object-contain p-6"
+              />
+            </div>
           </div>
 
           <div className="absolute -bottom-6 -left-6 rounded-xl bg-cream px-6 py-4 shadow-lg">

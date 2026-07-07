@@ -69,7 +69,7 @@ export default function SistemaSanteroTeaser() {
                 key={linea.id}
                 className="overflow-hidden rounded-2xl bg-white"
               >
-                <div className="bg-gradient-to-br from-navy-light to-sky-600 px-4 py-4">
+                <div className="bg-gradient-to-br from-navy to-sky px-4 py-4">
                   <span className="inline-block rounded-full bg-white/20 px-2 py-0.5 text-[10px] font-semibold tracking-wide text-white uppercase">
                     {linea.badge}
                   </span>
@@ -91,7 +91,7 @@ export default function SistemaSanteroTeaser() {
                         key={bullet}
                         className="flex items-start gap-1.5 text-xs text-zinc-700"
                       >
-                        <span className="mt-0.5 shrink-0 text-sky-500">
+                        <span className="mt-0.5 shrink-0 text-sky">
                           ✓
                         </span>
                         {bullet}

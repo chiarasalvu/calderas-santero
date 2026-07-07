@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const caracteristicas = [
   {
     id: "sarro",
@@ -46,7 +48,14 @@ export default function Overview() {
 
         <div className="mt-14 grid gap-12 lg:grid-cols-2">
           <div className="aspect-square w-full rounded-2xl bg-white p-3 shadow-sm ring-1 ring-zinc-100">
-            <div className="h-full w-full rounded-xl bg-gradient-to-br from-zinc-800 via-zinc-700 to-zinc-900" />
+            <div className="relative h-full w-full overflow-hidden rounded-xl bg-zinc-100">
+              <Image
+                src="/img/generales/caldera-8.png"
+                alt="Detalle del equipo del Sistema Santero"
+                fill
+                className="object-contain p-6"
+              />
+            </div>
           </div>
 
           <div className="flex flex-col gap-10">

@@ -1,19 +1,22 @@
-import AboutHero from "@/components/AboutHero";
+import Hero from "@/components/home/Hero";
 import HistoryTimeline from "@/components/HistoryTimeline";
 import SistemaSanteroTeaser from "@/components/home/SistemaSanteroTeaser";
 import ServicesPreview from "@/components/home/ServicesPreview";
 import CasesPreview from "@/components/home/CasesPreview";
 import Faq from "@/components/home/Faq";
 import CtaBanner from "@/components/CtaBanner";
+import { getLogosPorSegmento } from "@/lib/segment-logos";
 
 export default function Home() {
+  const logosPorSegmento = getLogosPorSegmento();
+
   return (
     <>
-      <AboutHero />
+      <Hero />
       <HistoryTimeline />
       <SistemaSanteroTeaser />
       <ServicesPreview />
-      <CasesPreview />
+      <CasesPreview logosPorSegmento={logosPorSegmento} />
       <Faq />
       <CtaBanner
         titulo="¿Listo para modernizar su planta?"

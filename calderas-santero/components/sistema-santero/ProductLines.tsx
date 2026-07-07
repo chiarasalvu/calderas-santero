@@ -1,6 +1,9 @@
+import Image from "next/image";
+
 type LineaProducto = {
   id: string;
   nombre: string;
+  imagen: string;
   badge: string;
   badgeClassName: string;
   subtitulo: string;
@@ -11,6 +14,7 @@ const lineas: LineaProducto[] = [
   {
     id: "atsol",
     nombre: "Línea ATSOL",
+    imagen: "/img/generales/caldera-9.png",
     badge: "Alto consumo",
     badgeClassName: "bg-brand-red text-white",
     subtitulo: "La solución para grandes demandas de agua caliente sanitaria.",
@@ -23,6 +27,7 @@ const lineas: LineaProducto[] = [
   {
     id: "adn",
     nombre: "Línea ADN",
+    imagen: "/img/generales/caldera-11.png",
     badge: "Diseño compacto",
     badgeClassName: "bg-navy text-white",
     subtitulo: "La eficiencia del Sistema Santero en formato compacto.",
@@ -51,7 +56,13 @@ export default function ProductLines() {
               key={linea.id}
               className="overflow-hidden rounded-2xl border border-zinc-200"
             >
-              <div className="relative aspect-video bg-gradient-to-br from-zinc-300 via-zinc-200 to-zinc-400">
+              <div className="relative aspect-video">
+                <Image
+                  src={linea.imagen}
+                  alt={linea.nombre}
+                  fill
+                  className="object-cover"
+                />
                 <span
                   className={`absolute top-4 right-4 rounded-full px-3 py-1 text-xs font-semibold tracking-wide uppercase ${linea.badgeClassName}`}
                 >

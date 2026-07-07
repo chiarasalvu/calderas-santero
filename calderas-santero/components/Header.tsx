@@ -15,7 +15,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 rounded-full bg-white/70 px-6 py-3 shadow-sm ring-1 ring-black/5 backdrop-blur-md">
         <Link href="/" className="flex shrink-0 items-center">
           <Image
-            src="/img/logo.png"
+            src="/img/generales/logo.png"
             alt="Calderas Santero"
             width={201}
             height={72}

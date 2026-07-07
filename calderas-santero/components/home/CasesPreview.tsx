@@ -1,37 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
+import { segmentos, type Segmento, type SegmentoLogo } from "@/lib/segments";
 
-type SectorCasos = {
-  id: string;
-  nombre: string;
-  clientes: string[];
+type CasesPreviewProps = {
+  logosPorSegmento: Record<Segmento, SegmentoLogo[]>;
 };
 
-const sectores: SectorCasos[] = [
-  {
-    id: "clubes",
-    nombre: "Clubes",
-    clientes: ["Cliente 01", "Cliente 02", "Cliente 03", "Cliente 04"],
-  },
-  {
-    id: "desarrolladoras",
-    nombre: "Desarrolladoras",
-    clientes: ["Cliente 01", "Cliente 02", "Cliente 03"],
-  },
-  {
-    id: "hoteles",
-    nombre: "Hoteles",
-    clientes: ["Cliente 01", "Cliente 02", "Cliente 03", "Cliente 04"],
-  },
-  {
-    id: "industrias",
-    nombre: "Industrias",
-    clientes: ["Cliente 01", "Cliente 02", "Cliente 03", "Cliente 04", "Cliente 05"],
-  },
-];
-
-export default function CasesPreview() {
+export default function CasesPreview({ logosPorSegmento }: CasesPreviewProps) {
   const [abierto, setAbierto] = useState<string | null>(null);
 
   return (
@@ -42,13 +19,15 @@ export default function CasesPreview() {
         </h2>
 
         <div className="mt-10">
-          {sectores.map((sector, index) => {
-            const open = abierto === sector.id;
+          {segmentos.map((segmento, index) => {
+            const open = abierto === segmento.id;
+            const logos = logosPorSegmento[segmento.id];
+
             return (
-              <div key={sector.id} className="border-b border-zinc-200 first:border-t">
+              <div key={segmento.id} className="border-b border-zinc-200 first:border-t">
                 <button
                   type="button"
-                  onClick={() => setAbierto(open ? null : sector.id)}
+                  onClick={() => setAbierto(open ? null : segmento.id)}
                   aria-expanded={open}
                   className="flex w-full items-center justify-between gap-4 py-8 text-left"
                 >
@@ -57,7 +36,7 @@ export default function CasesPreview() {
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <span className="font-heading text-2xl font-bold tracking-wide text-navy uppercase sm:text-3xl">
-                      {sector.nombre}
+                      {segmento.label}
                     </span>
                   </span>
                   <span
@@ -71,14 +50,20 @@ export default function CasesPreview() {
                 </button>
 
                 {open && (
-                  <div className="flex flex-wrap gap-3 pb-8">
-                    {sector.clientes.map((cliente) => (
-                      <span
-                        key={cliente}
-                        className="rounded-lg border border-zinc-200 bg-cream-card px-5 py-3 text-sm font-medium text-zinc-600"
+                  <div className="grid grid-cols-3 gap-3 pb-8 sm:grid-cols-4 lg:grid-cols-6">
+                    {logos.map((logo) => (
+                      <div
+                        key={logo.src}
+                        className="relative flex h-16 items-center justify-center rounded-lg border border-zinc-200 bg-white p-2"
                       >
-                        {cliente}
-                      </span>
+                        <Image
+                          src={logo.src}
+                          alt={logo.nombre}
+                          fill
+                          sizes="140px"
+                          className="object-contain p-2"
+                        />
+                      </div>
                     ))}
                   </div>
                 )}
