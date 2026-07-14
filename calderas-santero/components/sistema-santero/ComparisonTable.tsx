@@ -48,42 +48,44 @@ export default function ComparisonTable() {
           Ventaja Competitiva Santero
         </h2>
 
-        <table className="mt-12 w-full border-collapse text-left">
-          <thead>
-            <tr className="bg-zinc-100">
-              <th className="rounded-l-lg px-6 py-4 font-heading text-base font-bold text-zinc-900">
-                Característica
-              </th>
-              <th className="px-6 py-4 font-heading text-base font-medium text-zinc-500">
-                Sistema Tradicional
-              </th>
-              <th className="rounded-r-lg px-6 py-4 font-heading text-base font-bold text-brand-red">
-                Sistema Santero
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {filas.map((fila) => (
-              <tr key={fila.id} className="border-b border-brand-red/15">
-                <td className="px-6 py-5 text-sm font-semibold text-zinc-900">
-                  {fila.caracteristica}
-                </td>
-                <td className="px-6 py-5 text-sm text-zinc-400">
-                  {fila.tradicional}
-                </td>
-                <td
-                  className={`px-6 py-5 text-sm ${
-                    fila.destacado
-                      ? "font-medium text-brand-red"
-                      : "text-zinc-800"
-                  }`}
-                >
-                  {fila.santero}
-                </td>
+        <div className="mt-12 overflow-x-auto">
+          <table className="w-full min-w-[560px] border-collapse text-left">
+            <thead>
+              <tr className="bg-zinc-100">
+                <th className="rounded-l-lg px-4 py-4 font-heading text-base font-bold text-zinc-900 sm:px-6">
+                  Característica
+                </th>
+                <th className="px-4 py-4 font-heading text-base font-medium text-zinc-500 sm:px-6">
+                  Sistema Tradicional
+                </th>
+                <th className="rounded-r-lg px-4 py-4 font-heading text-base font-bold text-brand-red sm:px-6">
+                  Sistema Santero
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {filas.map((fila) => (
+                <tr key={fila.id} className="border-b border-brand-red/15">
+                  <td className="px-4 py-5 text-sm font-semibold text-zinc-900 sm:px-6">
+                    {fila.caracteristica}
+                  </td>
+                  <td className="px-4 py-5 text-sm text-zinc-400 sm:px-6">
+                    {fila.tradicional}
+                  </td>
+                  <td
+                    className={`px-4 py-5 text-sm sm:px-6 ${
+                      fila.destacado
+                        ? "font-medium text-brand-red"
+                        : "text-zinc-800"
+                    }`}
+                  >
+                    {fila.santero}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   );

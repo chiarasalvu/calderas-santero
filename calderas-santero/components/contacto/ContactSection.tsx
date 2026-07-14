@@ -9,7 +9,7 @@ const datosContacto = [
 
 export default function ContactSection() {
   return (
-    <section className="px-6 py-16 sm:py-20">
+    <section className="px-6 pt-8 pb-16 sm:py-20">
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2">
         <div className="rounded-2xl border border-zinc-200 p-8">
           <h2 className="font-heading text-xl font-bold text-navy">

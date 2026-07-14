@@ -31,11 +31,11 @@ export default function CasesPreview({ logosPorSegmento }: CasesPreviewProps) {
                   aria-expanded={open}
                   className="flex w-full items-center justify-between gap-4 py-8 text-left"
                 >
-                  <span className="flex items-baseline gap-5">
+                  <span className="flex items-baseline gap-3 sm:gap-5">
                     <span className="text-sm text-brand-red/60">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span className="font-heading text-2xl font-bold tracking-wide text-navy uppercase sm:text-3xl">
+                    <span className="font-heading text-lg font-bold tracking-wide text-navy uppercase sm:text-2xl lg:text-3xl">
                       {segmento.label}
                     </span>
                   </span>

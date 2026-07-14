@@ -57,7 +57,7 @@ export default function HistoryTimeline() {
           .
         </h2>
 
-        <ol className="relative mt-16 flex flex-col gap-16">
+        <ol className="relative mt-16 flex flex-col gap-10 sm:gap-16">
           <div
             className="absolute top-0 bottom-0 left-1/2 hidden w-px -translate-x-1/2 bg-brand-red/30 sm:block"
             aria-hidden
@@ -66,26 +66,31 @@ export default function HistoryTimeline() {
           {historia.map((hito, index) => {
             const cardOnRight = index % 2 === 0;
 
-            const year = (
-              <span className="font-heading text-5xl text-brand-red/50 sm:text-6xl">
-                {hito.anio}
-              </span>
-            );
-            const card = <TimelineCard hito={hito} />;
-
             return (
               <li
                 key={hito.id}
-                className="relative flex flex-col items-center gap-6 sm:flex-row sm:gap-12"
+                className="relative flex flex-col items-center gap-2 sm:flex-row sm:gap-12"
               >
-                <div className="flex flex-1 items-center justify-center sm:justify-end">
-                  {cardOnRight ? year : card}
-                </div>
+                <span
+                  className={`font-heading text-lg font-bold tracking-wide text-brand-red uppercase sm:flex-1 sm:text-5xl sm:font-normal sm:tracking-normal sm:text-brand-red/50 sm:normal-case lg:text-6xl ${
+                    cardOnRight
+                      ? "sm:order-1 sm:text-right"
+                      : "sm:order-3 sm:text-left"
+                  }`}
+                >
+                  {hito.anio}
+                </span>
 
-                <span className="relative z-10 hidden h-3.5 w-3.5 shrink-0 rounded-full bg-brand-red sm:block" />
+                <span className="relative z-10 hidden h-3.5 w-3.5 shrink-0 rounded-full bg-brand-red sm:order-2 sm:block" />
 
-                <div className="flex flex-1 items-center justify-center sm:justify-start">
-                  {cardOnRight ? card : year}
+                <div
+                  className={`w-full sm:flex sm:flex-1 sm:items-center ${
+                    cardOnRight
+                      ? "sm:order-3 sm:justify-start"
+                      : "sm:order-1 sm:justify-end"
+                  }`}
+                >
+                  <TimelineCard hito={hito} />
                 </div>
               </li>
             );

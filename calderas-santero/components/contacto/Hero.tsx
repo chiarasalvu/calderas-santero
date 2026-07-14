@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
-    <section className="bg-zinc-50 px-6 py-20">
-      <div className="mx-auto max-w-6xl">
+    <section className="bg-zinc-50 px-6 pt-24 pb-10 sm:py-28">
+      <div className="mx-auto mt-12 max-w-6xl">
         <h1 className="font-heading text-4xl font-bold text-navy sm:text-5xl">
           Contacto
         </h1>
