@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function AboutHero() {
   return (
-    <section className="relative overflow-hidden bg-navy px-6 py-24 sm:py-32">
+    <section className="relative flex min-h-dvh items-center overflow-hidden bg-navy px-6 py-24 sm:py-32">
       <div
         className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_45%),radial-gradient(circle_at_80%_60%,rgba(255,255,255,0.06),transparent_40%)]"
         aria-hidden
@@ -12,7 +12,7 @@ export default function AboutHero() {
         aria-hidden
       />
 
-      <div className="relative mx-auto mt-12 max-w-6xl">
+      <div className="relative mx-auto w-full max-w-6xl">
         <h1 className="max-w-2xl font-heading text-4xl font-bold text-white sm:text-5xl lg:max-w-4xl">
           Más de 90 años transformando la industria térmica argentina.
         </h1>
